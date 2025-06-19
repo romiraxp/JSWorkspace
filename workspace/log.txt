@@ -1,0 +1,35 @@
+$ npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 167 packages, and audited 168 packages in 11s
+
+13 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+$ npm install core-js@3
+
+added 1 package, and audited 169 packages in 8s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npm run build
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Expected ',' or '}' after property value in JSON at position 518 (line 22 column 5) while parsing near "...el src -d dist\"\n    \"test\": \"echo \\\"Erro..."
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: C:\Users\Roman Podkorytov\AppData\Local\npm-cache\_logs\2025-06-19T05_08_23_038Z-debug-0.log
+
+$ npm run build
+
+> defender-game@1.0.0 build
+> babel src -d dist
+
+Successfully compiled 1 file with Babel (1269ms).
+

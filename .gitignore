@@ -4,6 +4,7 @@ Thumbs.db*
 HELP.md
 dist
 doc
+workspace/dist
 
 # Logs
 logs
