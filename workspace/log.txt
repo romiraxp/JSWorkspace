@@ -33,3 +33,110 @@ $ npm run build
 
 Successfully compiled 1 file with Babel (1269ms).
 
+$ npm install --save-dev eslint@8
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 84 packages, and audited 253 packages in 8s
+
+37 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npm install --save-dev eslint@latest @eslint/js@latest
+
+added 14 packages, removed 19 packages, changed 8 packages, and audited 248 packages in 5s
+
+37 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+$ npm run lint
+
+> defender-game@1.0.0 lint
+> eslint .
+
+(node:23640) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 9.29.0
+
+C:\Podkorytro01\Netology\JSdeepdive\workspace\eslint.config.js:1
+# Create JavaScript configuration file
+^
+
+SyntaxError: Invalid or unexpected token
+    at wrapSafe (node:internal/modules/cjs/loader:1512:18)
+    at Module._compile (node:internal/modules/cjs/loader:1534:20)
+    at Object..js (node:internal/modules/cjs/loader:1699:10)
+    at Module.load (node:internal/modules/cjs/loader:1313:32)
+    at Function._load (node:internal/modules/cjs/loader:1123:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at cjsLoader (node:internal/modules/esm/translators:263:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:196:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+
+
+$ npm run lint
+
+> defender-game@1.0.0 lint
+> eslint .
+
+(node:22816) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 9.29.0
+
+C:\Podkorytro01\Netology\JSdeepdive\workspace\eslint.config.js:1
+touch eslint.config.js
+      ^^^^^^
+
+SyntaxError: Unexpected identifier 'eslint'
+    at wrapSafe (node:internal/modules/cjs/loader:1512:18)
+    at Module._compile (node:internal/modules/cjs/loader:1534:20)
+    at Object..js (node:internal/modules/cjs/loader:1699:10)
+    at Module.load (node:internal/modules/cjs/loader:1313:32)
+    at Function._load (node:internal/modules/cjs/loader:1123:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at cjsLoader (node:internal/modules/esm/translators:263:5)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:196:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+
+
+$ npm run lint
+
+> defender-game@1.0.0 lint
+> eslint .
+
+(node:27152) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+C:\Podkorytro01\Netology\JSdeepdive\workspace\.eslintrc.js
+  14:2  error  Missing semicolon  semi
+
+✖ 1 problem (1 error, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+$ npm run lint
+
+> defender-game@1.0.0 lint
+> eslint .
+
+(node:16608) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+$ npm run lint
+
+> defender-game@1.0.0 lint
+> eslint .
