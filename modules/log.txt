@@ -1,0 +1,243 @@
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (modules)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+type: (commonjs)
+About to write to C:\Podkorytro01\Netology\JSdeepdive\modules\package.json:
+
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "**Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+Is this OK? (yes)
+
+/*------------------*/
+
+$ npm install -D webpack webpack-cli
+
+added 117 packages, and audited 118 packages in 12s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+/*------------------*/
+
+прописали в package.json->script "build": webpack --mode production для запуска webpack
+
+/*------------------*/
+
+$ npm run build
+
+> modules@1.0.0 build
+> webpack --mode production
+
+Entrypoint main =
+
+ERROR in main
+Module not found: Error: Can't resolve './src' in 'C:\Podkorytro01\Netology\JSdeepdive\modules'
+resolve './src' in 'C:\Podkorytro01\Netology\JSdeepdive\modules'
+  using description file: C:\Podkorytro01\Netology\JSdeepdive\modules\package.json (relative path: .)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: C:\Podkorytro01\Netology\JSdeepdive\modules\package.json (relative path: ./src)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        C:\Podkorytro01\Netology\JSdeepdive\modules\src doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        C:\Podkorytro01\Netology\JSdeepdive\modules\src.js doesn't exist
+      .json
+        Field 'browser' doesn't contain a valid alias configuration
+        C:\Podkorytro01\Netology\JSdeepdive\modules\src.json doesn't exist
+      .wasm
+        Field 'browser' doesn't contain a valid alias configuration
+        C:\Podkorytro01\Netology\JSdeepdive\modules\src.wasm doesn't exist
+      as directory
+        C:\Podkorytro01\Netology\JSdeepdive\modules\src doesn't exist
+
+webpack 5.99.9 compiled with 1 error in 100 ms
+
+/*------------------*/
+
+создаем в папке modules файл webpack.config.js
+создаем точку входа entry src/index.js
+
+/*------------------*/
+
+$ npm run build
+
+> modules@1.0.0 build
+> webpack --mode production
+
+asset main.js 0 bytes [emitted] [minimized] (name: main)
+./src/index.js 1 bytes [built] [code generated]
+webpack 5.99.9 compiled successfully in 413 ms
+
+/*------------------*/
+
+научить webpack работать с нужными файлами
+устанавливае плагин для работы с html файлами
+
+/*------------------*/
+
+$ npm install -D html-webpack-plugin
+
+added 31 packages, and audited 149 packages in 10s
+
+27 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+/*------------------*/
+
+и подключаем его в webpack.config.js
+
+/*------------------*/
+
+устанавливаем css-loader
+
+/*------------------*/
+
+$ npm install -D css-loader
+
+added 14 packages, and audited 163 packages in 4s
+
+30 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+/*------------------*/
+
+добавляем в webpack.config.js правила rules и ставим загрузчик для работы с .css- файлами
+а также прописываем в index.js импорт файла стилей import '.css/style.css'
+установить плагин minicss для того, чтобы распозновать css-код
+
+/*------------------*/
+
+$ npm install -D mini-css-extract-plugin
+
+added 1 package, and audited 164 packages in 3s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+/*------------------*/
+
+подключаем mini-css plugin в файле webpack.config.js
+
+/*------------------*/
+
+$ npm run build
+
+> modules@1.0.0 build
+> webpack --mode production
+
+assets by status 560 bytes [cached] 2 assets
+./src/index.js 45 bytes [built] [code generated] [1 error]
+
+ERROR in ./src/index.js 1:0
+Module parse failed: 'import' and 'export' may appear only with 'sourceType: module' (1:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> import './css/style.css';
+| console.log('hi');
+
+webpack 5.99.9 compiled with 1 error in 1231 ms
+
+/*------------------*/
+
+очистил в package.json значение для type, было commonjs, смена на module не помогла
+
+/*------------------*/
+
+$ npm run build
+
+> modules@1.0.0 build
+> webpack --mode production
+
+asset test.html 264 bytes [emitted]
+asset main.js 41 bytes [emitted] [minimized] (name: main)
+asset main.css 26 bytes [emitted] (name: main)
+Entrypoint main 67 bytes = main.css 26 bytes main.js 41 bytes
+orphan modules 2.81 KiB (javascript) 937 bytes (runtime) [orphan] 8 modules
+cacheable modules 45 bytes (javascript) 25 bytes (css/mini-extract)
+  ./src/index.js 45 bytes [built] [code generated]
+  css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css 25 bytes [built] [code generated]
+webpack 5.99.9 compiled successfully in 1510 ms
+
+/*------------------*/
+
+установка webpack dev server и обновляем скрипт в package.json
+
+/*------------------*/
+
+$ npm install -D webpack-dev-server
+
+added 177 packages, and audited 341 packages in 14s
+
+67 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+/*------------------*/
+
+$ npm run start
+
+> modules@1.0.0 start
+> webpack serve --mode development
+
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:8080/, http://[::1]:8080/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.0.12:8080/
+<i> [webpack-dev-server] Content not from webpack is served from 'C:\...\Netology\JSdeepdive\modules\public' directory
+asset main.js 182 KiB [emitted] (name: main)
+asset test.html 350 bytes [emitted]
+asset main.css 250 bytes [emitted] (name: main)
+Entrypoint main 182 KiB = main.css 250 bytes main.js 182 KiB
+runtime modules 43.9 KiB 22 modules
+orphan modules 2.76 KiB [orphan] 3 modules
+cacheable modules 115 KiB (javascript) 25 bytes (css/mini-extract)
+  modules by path ./node_modules/ 115 KiB
+    modules by path ./node_modules/webpack-dev-server/client/ 84.8 KiB 8 modules
+    modules by path ./node_modules/webpack/hot/*.js 5.17 KiB 4 modules
+    modules by path ./node_modules/mini-css-extract-plugin/dist/hmr/*.js 5.92 KiB
+      ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js 4.99 KiB [built] [code generated]
+      ./node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js 953 bytes [built] [code generated]
+    ./node_modules/events/events.js 14.5 KiB [built] [code generated]
+    ./node_modules/ansi-html-community/index.js 4.16 KiB [built] [code generated]
+  modules by path ./src/ 752 bytes (javascript) 25 bytes (css/mini-extract)
+    ./src/index.js 45 bytes [built] [code generated]
+    ./src/css/style.css 707 bytes [built] [code generated]
+    css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css 25 bytes [built] [code generated]
+webpack 5.99.9 compiled successfully in 1016 ms
