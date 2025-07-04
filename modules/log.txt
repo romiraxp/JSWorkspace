@@ -241,3 +241,25 @@ cacheable modules 115 KiB (javascript) 25 bytes (css/mini-extract)
     ./src/css/style.css 707 bytes [built] [code generated]
     css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css 25 bytes [built] [code generated]
 webpack 5.99.9 compiled successfully in 1016 ms
+
+
+
+$ npm install val-loader --save-dev
+
+added 1 package, and audited 342 packages in 6s
+
+68 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+$ npm install --save-dev html-loader
+
+added 6 packages, and audited 348 packages in 4s
+
+72 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
