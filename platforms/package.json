@@ -1,0 +1,32 @@
+{
+  "name": "@romiraxp/platforms",
+  "version": "1.0.0",
+  "description": "**Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.",
+  "homepage": "https://github.com/romiraxp/JSWorkspace/tree/main#readme",
+  "bugs": {
+    "url": "https://github.com/romiraxp/JSWorkspace/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romiraxp/JSWorkspace.git#main"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[F\u001b[B\u001b[\u001b[B\u001b[F\u001b[B\u001b[F\u001b[3~l\u001b[B\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Cdist/index.js)",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}
